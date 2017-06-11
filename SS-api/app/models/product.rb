@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
+  validates_presence_of :product_type, :status, :price
 
-  validates_presence_of :type, :status, :available, :published, :available_since,
-  :published_since, :price
+  enum product_type: [:strap, :merch, :apparel]
+  enum status: [:available, :holding, :sold]
 end
